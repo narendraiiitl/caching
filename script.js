@@ -12,7 +12,7 @@ const post = (id, title, body, userId) => {
       </div>`)
 }
 const cacheddata = async () => {
-    const res = await axios.get('http://localhost:3000/');
+    const res = await axios.get('https://glacial-thicket-18916.herokuapp.com/');
     console.log(res);
     for (let i = 0; i < res.data.length; i++) {
         const { id, title, body, userId } = res.data[i];
@@ -23,7 +23,7 @@ const cacheddata = async () => {
 cacheddata();
 
 unique.addEventListener("click", async () => {
-    const res = await axios.get('http://localhost:3000/cache');
+    const res = await axios.get('https://glacial-thicket-18916.herokuapp.com/cache');
     console.log(res.data);
     alertify
         .alert(String(res.data.data.length), function () {
